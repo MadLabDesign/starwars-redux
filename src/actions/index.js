@@ -5,7 +5,7 @@
 
 // our action creator will be a function that returns a promise
 // we'll have to be sure to make our promise resolve within our new "thunk based middlware"
-// the url to fetch charicters from is `https://swapi.co/api/people/`
+// the url to fetch charicters from is `https://swapi.dev/api/people/`
 // remember that now we have controll over our thunk-based
 import axios from "axios";
 
@@ -17,7 +17,7 @@ export const getChars = () => {
   return dispatch => {
     dispatch({ type: FETCHING });
     axios
-      .get("https://swapi.co/api/people/")
+      .get("https://swapi.dev/api/people/")
       .then(response => {
         console.log(response);
         dispatch({ type: FETCHED, chars: response.data.results });
